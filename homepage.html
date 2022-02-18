@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Tesla</title>
+    <style>        
+        /*Contents of the Carousel*/ 
+        .slideimg{
+            height: 70vh;
+            object-fit: cover;
+        }
+        .slidetext{
+            font-family: 'lato', sans-serif;
+            font-size: 100px;
+            color: black;
+            margin-top: -80px;
+            text-align: center;
+            text-shadow: 0px -3px 5px white;
+        }
+        .carousel-indicators li{
+            background-color: rgb(41, 41, 41);
+        }
+        .buttons{
+            text-align: center;
+        }
+        .btn{
+            padding: 3px;
+            width: 170px;
+            background-color: rgb(185, 185, 185);
+            border-radius: 14px;
+        }
+        .btn:hover{
+            background-color: rgb(204, 201, 201);
+        }
+        .btn:focus{
+            background-color: rgb(206, 206, 206);
+            outline: none;
+            box-shadow: none;
+        }
+        /*Solar Panel and Solar Roof section*/
+        .solar{
+            height: 100vh; 
+            width: 100%;
+            position: relative;
+        }
+        .stxt{
+            position: absolute;
+            top:280px;
+            width: 400px;
+            background-color: rgba(255,255,255,0.5);
+            padding: 10px;
+            font-size: 60px;
+            font-family: 'lato',sans-serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            border-bottom-right-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .buttons1{
+            width: 30%;
+            position: absolute;
+            top:400px;
+            text-align: left;
+            margin-left: 5px;
+        }
+        .btn1{
+            color: white;
+            padding: 5px;
+            background-color: rgba(0,0,0,0.7);
+            width: 190px;
+        }
+        .btn1:hover{
+            background-color: rgba(0,0,0,0.9);
+            color: white;
+        }
+
+        /*Accessories section*/
+        .acc{
+            height: 70vh;
+            width: 100%;
+            position: relative;
+        }
+        .accimg{
+            margin-left:30%;
+            width: 40%; 
+            height: 80%;
+        }
+        .acc .btn1{
+            position: absolute; 
+            top: 250px; 
+            left: 58%;
+            width:10%;
+        }
+        .atext{
+            text-align: center;
+            font-size: 60px;
+            font-family: 'lato',sans-serif;
+            color: black;    
+        }
+
+        /*Footer*/
+        .footer{
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            text-align: center;
+        }
+        .footer a,.footer p{
+            display: inline-block;
+            margin:2px;
+            color: black;
+            text-decoration: none;
+        }
+        /*Changing the nav color when scrolling*/
+        .change{
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 1px 10px 1px rgb(167, 166, 166) ;
+        }     
+                
+        @media only screen and (max-width:768px){
+            .btn,.btn1{
+                margin:2px;
+            }            
+            .slidetext{
+                font-size: 70px;
+                margin-top: -55px;
+
+            }
+            .solar{
+                height: 50vh;
+            }
+            .stxt{
+                position: absolute;
+                top:120px;
+                width: 200px;
+                font-size: 30px;
+            }
+            .solar .buttons1{
+                width: 40%;
+                position: absolute;
+                top:190px;
+                text-align: left;
+                margin-left: 5px;
+            }
+            .solar .btn1{
+                width: 90px;
+                font-size: 10px;
+            }
+            .atext{
+                font-size: 40px;
+            }
+            .accimg{
+                margin-left:10%;
+                width: 80%;
+            }
+            .acc .btn1{
+                top: 235px; 
+                left: 70%;
+                width:15%;
+                font-size: 10px;
+            }
+        }
+        @media only screen and (max-width:480px){
+            .slidetext{
+                font-size: 50px;
+                margin-top: -38px;
+            }
+            .btn{
+                margin: 2px;
+            }
+            .solar{
+                height: 100vh;
+            }
+            .solar div{
+               position: relative;
+               height: 50% !important;
+               width: 100%  !important;
+               display: block !important;
+            }
+            .stext{
+                position: absolute;
+                top:150px;
+                width: 200px;
+                font-size: 30px;
+            }            
+            .solar .buttons1{
+                width: 100%;
+                position: absolute;
+                top:190px;
+                text-align: left;
+                margin-left: 5px;
+            }
+            .solar .btn1{
+                width: 90px;
+                font-size: 10px;
+            }
+            .atext{
+                font-size: 40px;
+            }
+            .accimg{
+                margin-left:5%;
+                width: 90%;
+            }
+            .acc .btn1{
+                top: 235px; 
+                left: 70%;
+                width:15%;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="nav"> 
+        <img src="tesla.png" style="float: left; width: 150px;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Models 
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Model 3</a>
+                <a class="dropdown-item" href="#">Model X</a>
+                <a class="dropdown-item" href="#">Model y</a>
+                <a class="dropdown-item" href="#">Solar Roof</a>
+                <a class="dropdown-item" href="#">Solar Panel</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Menu 
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Existing Inventory</a>
+                <a class="dropdown-item" href="#">Used Inventory</a>
+                <a class="dropdown-item" href="#">Trade-In</a>
+                <a class="dropdown-item" href="#">Test Drive</a>
+                <a class="dropdown-item" href="#">Cybertruck</a>
+                <a class="dropdown-item" href="#">Roadster</a>
+                <a class="dropdown-item" href="#">Semi</a>
+                <a class="dropdown-item" href="#">Charging</a>
+                <a class="dropdown-item" href="#">Powerwall</a>
+                <a class="dropdown-item" href="#">Commercial Energy</a>
+                <a class="dropdown-item" href="#">Utilities</a>
+                <a class="dropdown-item" href="#">Find Us</a>
+                <a class="dropdown-item" href="#">Support</a>
+                <a class="dropdown-item" href="#">Investor Relations</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Shop <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Account</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 100vh;" >
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100 slideimg" src="models.jpg" alt="First slide">
+            <p class="slidetext animate__animated animate__fadeInRight">MODEL S</p>
+            <div class="buttons">
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.25s" href="#" role="button">Custom Order</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.5s" href="#" role="button">Existing Inventory</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.75s" href="#" role="button">Know more</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 slideimg" src="modelx.jpg" alt="Second slide">
+            <p class="slidetext animate__animated animate__fadeInRight">MODEL X</p>
+            <div class="buttons">
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.25s" href="#" role="button">Custom Order</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.5s" href="#" role="button">Existing Inventory</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.75s" href="#" role="button">Know more</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 slideimg" src="model3.jpg" alt="Third slide">
+            <p class="slidetext animate__animated animate__fadeInRight">MODEL 3</p>
+            <div class="buttons">
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.25s" href="#" role="button">Custom Order</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.5s" href="#" role="button">Existing Inventory</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.75s" href="#" role="button">Know more</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100 slideimg" src="modely.jpg" alt="Fourth slide">
+            <p class="slidetext animate__animated animate__fadeInRight">MODEL Y</p>
+            <div class="buttons">
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.25s" href="#" role="button">Custom Order</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.5s" href="#" role="button">Existing Inventory</a>
+                <a class="btn animate__animated animate__fadeInDown" style="animation-delay:0.75s" href="#" role="button">Know more</a>
+            </div>
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    </div>
+    <div class="solar">
+        <div style="width: 50%; height:100%; float: left;">
+            <img src="solarpanel.jpg" style="object-fit: cover; height: 100%;width: 100%;" data-aos="fade-zoom" data-aos-duration="2000">
+            <p class="stxt" data-aos="fade-right" data-aos-duration="1000">Solar Panel</p>
+            <div class="buttons buttons1">
+                <a class="btn btn1" href="#" role="button" data-aos="fade-up" data-aos-duration="1000">Order Now</a>
+                <a class="btn btn1" href="#" role="button" data-aos="fade-up" data-aos-duration="1000">Know more</a>
+            </div>
+        </div>
+        <div style="width: 50%; height:100%;float: right;">
+            <img src="solarroof.jpg" style="object-fit: cover; height:100%; width: 100%;" data-aos="fade-zoom" data-aos-duration="2000">
+            <p class="stxt" data-aos="fade-right" data-aos-duration="1000">Solar Roof</p>
+            <div class="buttons buttons1">
+                <a class="btn btn1" href="#" role="button" data-aos="fade-up" data-aos-duration="1000">Order Now</a>
+                <a class="btn btn1" href="#" role="button" data-aos="fade-up" data-aos-duration="1000">Know more</a>
+            </div>
+        </div>
+    </div>
+    <div class="acc"> 
+        <p class="atext" style="height: 20%;" data-aos="fade-right" data-aos-duration="1000">Accessories</p>
+        <div class="accimg">
+            <img src="acc.jpg" style="object-fit: cover;width: 100%;height: 90%;" data-aos="fade-zoom" data-aos-duration="2000">
+        </div>
+        <a class="btn btn1" href="#" role="button" data-aos="fade-up" data-aos-duration="1000">Shop Now</a>
+    </div>
+
+    <div class="footer">
+        <p>Tesla &copy; 2022</p>
+        <a href="#">Privacy & legal</a>
+        <a href="#">Contact</a>
+        <a href="#">Careers</a>
+        <a href="#">News</a>
+        <a href="#">Engage</a>
+        <a href="#">Locations</a>
+    </div>
+    <script>
+        $(document).ready(function(){
+            //Changing nav color on scroll
+            $(window).scroll(function(){
+  	        var scroll = $(window).scrollTop();
+	        if (scroll > 200) {
+                $("#nav").addClass("change");
+	        }
+	        else{
+		        $("#nav").removeClass("change");  	
+	        }
+            })
+            //Change nav color for collapsed navbar
+            $(".navbar-toggler").click(function () {
+                $("nav").toggleClass("bg-light");
+            })
+            //To initialize AOS
+            AOS.init();
+        })        
+    </script>
+</body>
+</html>
